@@ -1,0 +1,13 @@
+{
+  "version": "2.7.0",
+  "kind": "app",
+  "released": "2026-09-03",
+  "minVersion": "2.6.0",
+  "payload": "payloads/2.7.0.bin",
+  "sha256": "94a1b31721857c8a7f664d47bd9ebc581e82da4a99beae41fbb093bea6a811c7",
+  "size": 278167,
+  "notes": [
+    "Check for updates, and update with one click — no more 90 MB emails.",
+    "Problem reporting: the app now tells Mithun when runs fail or get abandoned, so recurring issues actually get fixed. Settings shows exactly what is sent, and you can turn it off."
+  ]
+}
