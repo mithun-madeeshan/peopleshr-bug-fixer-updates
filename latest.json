@@ -1,14 +1,14 @@
 {
-  "version": "2.8.0",
+  "version": "2.8.1",
   "kind": "app",
   "released": "2026-09-09",
   "minVersion": "2.6.0",
-  "payload": "payloads/2.8.0.bin",
-  "sha256": "691045cfd03593963feb5bb3d2cdbef68b02eca41e4ae503119a3dd984c47ab4",
-  "size": 756204,
+  "payload": "payloads/2.8.1.bin",
+  "sha256": "7c8690566ad24d8f3c76181c43cf1d52a6ef0c7c1db92ff4118c9138f5c09b5e",
+  "size": 759522,
   "notes": [
-    "New: a Probation expert. Pick it (or leave the expert on Auto) and runs on HRM-PROBATION35-WEB or HRM-PROBATION45-VUE go straight to the page, controller, SQL script id and tables that decide the bug, instead of searching two repos.",
-    "Its knowledge pack now ships inside the app, so the expert is just as fast on your machine as on the one it was built on — 35 pages, 466 SQL scripts, 95 tables and 51 endpoints of ProbationV9, mapped from Releases/Version_9.9000.0.",
+    "Fixes the update that would not install. If you clicked Update and the app reopened unchanged, this is why: it gave the two folder renames one attempt each, three seconds after closing, and if antivirus or the closing app still had a file open it gave up silently. It now retries for up to a minute, and tells you on the next launch if it still could not finish.",
+    "New: a Probation expert. Pick it (or leave the expert on Auto) and runs on HRM-PROBATION35-WEB or HRM-PROBATION45-VUE go straight to the page, controller, SQL script id and tables that decide the bug, instead of searching two repos. Its knowledge pack ships inside the app.",
     "The Recruitment expert is included too. It carries the module rules and traps; its map is not bundled, so it will tell you when it is working without one."
   ]
 }
