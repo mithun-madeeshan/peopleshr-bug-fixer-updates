@@ -1,13 +1,14 @@
 {
-  "version": "2.7.0",
+  "version": "2.8.0",
   "kind": "app",
-  "released": "2026-09-03",
+  "released": "2026-09-09",
   "minVersion": "2.6.0",
-  "payload": "payloads/2.7.0.bin",
-  "sha256": "94a1b31721857c8a7f664d47bd9ebc581e82da4a99beae41fbb093bea6a811c7",
-  "size": 278167,
+  "payload": "payloads/2.8.0.bin",
+  "sha256": "691045cfd03593963feb5bb3d2cdbef68b02eca41e4ae503119a3dd984c47ab4",
+  "size": 756204,
   "notes": [
-    "Check for updates, and update with one click — no more 90 MB emails.",
-    "Problem reporting: the app now tells Mithun when runs fail or get abandoned, so recurring issues actually get fixed. Settings shows exactly what is sent, and you can turn it off."
+    "New: a Probation expert. Pick it (or leave the expert on Auto) and runs on HRM-PROBATION35-WEB or HRM-PROBATION45-VUE go straight to the page, controller, SQL script id and tables that decide the bug, instead of searching two repos.",
+    "Its knowledge pack now ships inside the app, so the expert is just as fast on your machine as on the one it was built on — 35 pages, 466 SQL scripts, 95 tables and 51 endpoints of ProbationV9, mapped from Releases/Version_9.9000.0.",
+    "The Recruitment expert is included too. It carries the module rules and traps; its map is not bundled, so it will tell you when it is working without one."
   ]
 }
