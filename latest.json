@@ -1,14 +1,14 @@
 {
-  "version": "2.8.1",
+  "version": "2.9.0",
   "kind": "app",
   "released": "2026-09-09",
   "minVersion": "2.6.0",
-  "payload": "payloads/2.8.1.bin",
-  "sha256": "7c8690566ad24d8f3c76181c43cf1d52a6ef0c7c1db92ff4118c9138f5c09b5e",
-  "size": 759522,
+  "payload": "payloads/2.9.0.bin",
+  "sha256": "d59a3a2c69335bfb656c9659d3a82b170bf11174dac6ae9a3040c78be4b140fa",
+  "size": 1430949,
   "notes": [
-    "Fixes the update that would not install. If you clicked Update and the app reopened unchanged, this is why: it gave the two folder renames one attempt each, three seconds after closing, and if antivirus or the closing app still had a file open it gave up silently. It now retries for up to a minute, and tells you on the next launch if it still could not finish.",
-    "New: a Probation expert. Pick it (or leave the expert on Auto) and runs on HRM-PROBATION35-WEB or HRM-PROBATION45-VUE go straight to the page, controller, SQL script id and tables that decide the bug, instead of searching two repos. Its knowledge pack ships inside the app.",
-    "The Recruitment expert is included too. It carries the module rules and traps; its map is not bundled, so it will tell you when it is working without one."
+    "New: a Training & Development expert. Leave the expert on Auto and any run on HRM-TND45-MVC goes straight to the controller, business class, SQL script id and tables that decide the bug — 48 pages, 423 endpoints and 1,001 SQL scripts, mapped from main.",
+    "It knows the things that make TND bugs slow: most endpoints exist three times (admin / supervisor / employee) and the three queries disagree; Approve/Reject runs in the WorkflowV5 engine and has no TND SQL at all; and the workflow type codes are per-client settings, so the same screen can behave differently on two clients.",
+    "Experts now installed: Probation, Training & Development (both with their maps bundled) and Recruitment."
   ]
 }
