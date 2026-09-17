@@ -1,15 +1,16 @@
 {
-  "version": "2.10.0",
+  "version": "2.11.0",
   "kind": "app",
   "released": "2026-09-17",
   "minVersion": "2.8.1",
-  "payload": "payloads/2.10.0.bin",
-  "sha256": "2eae64f69bb9830cc14c903332082d7cc512e156c7c26f7603e2caf9cc3eba7b",
-  "size": 1442947,
+  "payload": "payloads/2.11.0.bin",
+  "sha256": "bc596cc3ff0ceb6e1a104a991f304a2aba16fc19dc0152238731a9ba20856f79",
+  "size": 1448576,
   "notes": [
-    "New: a Plan / Auto switch on the run header. Until now every run started read-only — the agent could not change a single file until you approved the plan — and \"Give edit access\" only half-cleared it, so some of you hit a run that said it had access and still would not write. Auto is now the default: the agent can read, write and run commands from the start.",
-    "It is still your run. Auto changes what the agent is allowed to touch, not whether you get a say — the plan gate still stops and waits for you, and so does every other gate. Strict read-only is unaffected in both modes: the database stays read-only, enforced before the command runs.",
-    "The switch is per run and works mid-run. Click it halfway through and the fix restarts in the same session, so nothing already worked out is lost. Prefer the old behaviour? Pick Plan on the new-fix form, or set it as your default in Settings → Speed & model.",
-    "Fixed: a run resumed after closing the app came back with strict read-only silently switched off. It now keeps the protection it started with."
+    "Fixed: your saved database connections and your Azure DevOps token are no longer lost when you replace the app by hand. They were stored INSIDE the app folder — the one you delete and re-extract — so anyone following \"extract into a fresh folder and delete the old one\" lost them silently. They now live in %LOCALAPPDATA%PeoplesHR Bug Fixer, which no update can touch. Your existing settings are moved there automatically the first time you open this version; nothing is deleted.",
+    "New theme: Yukther — Light, in Visual Studio's classic light palette. Settings → Speed & model → Theme.",
+    "Fixed: dropdown values were invisible in the light theme — the open list was painted near-black while the text was near-black too. Every theme now paints its own list, and a test checks the contrast of all of them.",
+    "Fixed: the app filed faults against itself that were not faults — clicking Update when you were already up to date, and reporting a long-dead update failure from a version you had moved past. It also counted one finished fix several times.",
+    "From 2.10.0, if you missed it: a Plan / Auto switch on the run header. Auto is the default and lets the agent write from the start; the plan gate still waits for you."
   ]
 }
