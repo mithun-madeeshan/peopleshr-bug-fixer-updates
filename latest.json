@@ -1,14 +1,15 @@
 {
-  "version": "2.9.1",
+  "version": "2.10.0",
   "kind": "app",
-  "released": "2026-09-10",
-  "minVersion": "2.6.0",
-  "payload": "payloads/2.9.1.bin",
-  "sha256": "8e646baa4aa7275b7a2f0f4d0c2bce106aa3cfa499e9e1d82f2c3229c524f382",
-  "size": 1432613,
+  "released": "2026-09-17",
+  "minVersion": "2.8.1",
+  "payload": "payloads/2.10.0.bin",
+  "sha256": "2eae64f69bb9830cc14c903332082d7cc512e156c7c26f7603e2caf9cc3eba7b",
+  "size": 1442947,
   "notes": [
-    "Fixes updates that silently failed: you click Update, the app downloads it, closes — and reopens on the exact same version, still offering the update, with nothing on screen to say why. Windows was killing the install step the moment the app quit, before it ever got to swap the files in. If you've had to run \"Finish update.cmd\" to get unstuck, that was this — it should not be needed again.",
-    "This is also why the Training & Development expert from 2.9.0 was missing for some of you after clicking Update: you never actually landed on 2.9.0, the update just looked like it worked. It's in this release, along with Probation and Recruitment.",
-    "Updates now install through a one-time Windows scheduled task instead of a process the app spawns directly, so the install step survives the app closing."
+    "New: a Plan / Auto switch on the run header. Until now every run started read-only — the agent could not change a single file until you approved the plan — and \"Give edit access\" only half-cleared it, so some of you hit a run that said it had access and still would not write. Auto is now the default: the agent can read, write and run commands from the start.",
+    "It is still your run. Auto changes what the agent is allowed to touch, not whether you get a say — the plan gate still stops and waits for you, and so does every other gate. Strict read-only is unaffected in both modes: the database stays read-only, enforced before the command runs.",
+    "The switch is per run and works mid-run. Click it halfway through and the fix restarts in the same session, so nothing already worked out is lost. Prefer the old behaviour? Pick Plan on the new-fix form, or set it as your default in Settings → Speed & model.",
+    "Fixed: a run resumed after closing the app came back with strict read-only silently switched off. It now keeps the protection it started with."
   ]
 }
