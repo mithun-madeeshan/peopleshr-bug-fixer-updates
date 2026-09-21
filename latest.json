@@ -1,20 +1,19 @@
 {
-  "version": "2.17.0",
+  "version": "2.18.0",
   "kind": "app",
   "released": "2026-09-21",
   "minVersion": "2.8.1",
-  "payload": "payloads/2.17.0.bin",
-  "sha256": "effef7a2125c479faaddd9cd2b415f15be84ea72fe0a9f837202cbe96ec9facc",
-  "size": 1544348,
+  "payload": "payloads/2.18.0.bin",
+  "sha256": "f1d4c857fa912594693f8ac29df027cccb6b91f4a7f7b70cf25fe09ff3c72356",
+  "size": 1546679,
   "notes": [
-    "Fixed: \"Allow <tool> and continue\" said \"Resuming.\" and then sat there, and the only way on was Pause then Resume. The tool list is fixed when the agent starts, so a running agent could never see the new one — the button now restarts the session with it and sends the agent back to the step that was blocked.",
-    "Fixed: closing the app on a question and pressing Continue lost the question and carried on without you. The same card comes back and nothing moves until you answer. This now covers a run that had BLOCKED as well — the first version of the fix treated blocked as finished, so it restated its conclusions and re-read the whole ticket instead of waiting.",
-    "Fixed: \"the host is unreachable, schema only until the VPN is up\" while the VPN was up and SSMS was connected. Measured against the real server: unreachable 5 times out of 5 before, reachable 5 out of 5 after. The \"Azure DevOps cannot be reached\" banner shared the same fault.",
-    "A chat can now be opened on a folder where a fix is developing — it used to be refused. It opens read-only there: it reads and answers, and says what it would change rather than changing it.",
-    "A chat no longer surveys the repository when it opens — no fetch, no branch listing, no release sweep — unless the question needs it or you name a branch. Its opening instructions are about a third shorter as well.",
-    "New: Minimize on any card that asks you something — it rolls up to one line and keeps whatever you had typed.",
-    "New: the DBA's two SQL standards ship with the app. Table and column changes get the --@diagram tag and the MS_Description blocks; for a stored procedure the app tells you which release line the script targets and asks whether to apply the exception-handling framework.",
-    "The agent no longer writes comments into the code it changes — that belongs in the RCA.",
+    "Fixed: the database server (dab-phr) failing to start, or dropping out mid-run, so a run that needed row data quietly did without it. Across the logs on one machine only 21% of its starts succeeded — 212 of 350 timed out. Cause: it is a .NET program and resolves the SQL host through the same call that reported the host unreachable while the VPN was up. Given a name it cannot resolve it churns for 38 seconds and dies; given the address it is ready in under 4. The app now resolves the host itself and hands over the address, and refuses to do so where the name is genuinely needed (a validated certificate, or integrated security).",
+    "Also raised the time a database server is given to start, from 30 seconds to 90. Of the starts that did work, the median was 15 seconds and the slowest 30.3 — the old limit was sitting right on top of them.",
+    "Fixed: \"Allow <tool> and continue\" said Resuming and then nothing happened; Pause and Resume was the only way on. The tool list is fixed when the agent starts, so a running agent could never see the new one. The button restarts the session with it now.",
+    "Fixed: closing the app on a question and pressing Continue lost the question and carried on without you — including when the run had stopped as blocked, which the first version of that fix got wrong.",
+    "Fixed: \"the host is unreachable, schema only until the VPN is up\" while the VPN was up and SSMS was connected.",
+    "A chat can now be opened on a folder where a fix is developing — read-only — instead of being refused, and no longer surveys the repository before being asked anything.",
+    "New: Minimize on any card that asks you something, and the DBA's two SQL standards built in. The agent no longer writes comments into the code it changes.",
     "Also carries 2.14.0: the 2.13.0 start-screen fix, and your real plan usage (the /usage figure) in the strip."
   ]
 }
