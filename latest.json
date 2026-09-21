@@ -1,15 +1,18 @@
 {
-  "version": "2.15.1",
+  "version": "2.16.0",
   "kind": "app",
   "released": "2026-09-21",
   "minVersion": "2.8.1",
-  "payload": "payloads/2.15.1.bin",
-  "sha256": "66061c0c88ebe5d3be6e4c6abe8f56b846cc1c52982f6beda988ee9e76a6989b",
-  "size": 1542080,
+  "payload": "payloads/2.16.0.bin",
+  "sha256": "8905088dbb056d352228385d0a4e323fea60fb73727f2d5dd7ee830e2f76fb70",
+  "size": 1545826,
   "notes": [
-    "Fixed: \"the host is unreachable, schema only until the VPN is up\" while the VPN was up and SSMS was connected to the same server. The check asked DNS for IPv4 and IPv6 together, and behind the VPN's split DNS that question comes back empty for a host that has no IPv6 address — so a live server was reported as down, and any run started then lost its row data for its whole length. It now retries IPv4-only and then straight at the DNS servers before it believes it. Measured against the real server: unreachable 5 times out of 5 before, reachable 5 out of 5 after.",
-    "The same check is what decides \"Azure DevOps cannot be reached\", so that banner could be wrong for the same reason. It is fixed too.",
-    "Carries 2.15.0: Minimize on any gate card, the DBA's two SQL standards built in and shipped with the app, and no more comments written into the code it changes.",
-    "And 2.14.0: the 2.13.0 start-screen fix, and your real plan usage (the /usage figure) in the strip."
+    "Fixed: closing the app while a card was waiting for your answer, then pressing Continue, lost the question — the card was gone and the run carried on without you. It now comes back with the same card, the run stays where it was, and nothing moves until you answer. Runs already stranded on your disk are covered too.",
+    "The same thing could happen on Pause then Resume with a question open. It no longer can.",
+    "Fixed: \"the host is unreachable, schema only until the VPN is up\" while the VPN was up and SSMS was connected. The check asked DNS for IPv4 and IPv6 together and came back empty for a host with no IPv6 address, so a live server read as down and the run lost its row data for its whole length. Measured against the real server: unreachable 5 times out of 5 before, reachable 5 out of 5 after. The \"Azure DevOps cannot be reached\" banner used the same check and is fixed with it.",
+    "New: Minimize on any card that asks you something — it rolls up to one line and keeps whatever you had typed.",
+    "New: the DBA's two SQL standards ship with the app. Table and column changes get the --@diagram tag and the MS_Description blocks; for a stored procedure the app tells you which release line the script targets and asks whether to apply the exception-handling framework, rather than guessing.",
+    "The agent no longer writes comments into the code it changes — that belongs in the RCA.",
+    "Also carries 2.14.0: the 2.13.0 start-screen fix, and your real plan usage (the /usage figure) in the strip."
   ]
 }
