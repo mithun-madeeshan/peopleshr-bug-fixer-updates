@@ -1,16 +1,15 @@
 {
-  "version": "2.15.0",
+  "version": "2.15.1",
   "kind": "app",
   "released": "2026-09-21",
   "minVersion": "2.8.1",
-  "payload": "payloads/2.15.0.bin",
-  "sha256": "01048d49c9a1a1efea30c7953ef229a77349abaab271081395e219762aec2f69",
-  "size": 1539318,
+  "payload": "payloads/2.15.1.bin",
+  "sha256": "66061c0c88ebe5d3be6e4c6abe8f56b846cc1c52982f6beda988ee9e76a6989b",
+  "size": 1542080,
   "notes": [
-    "A card that asks you something can now be rolled out of the way: press Minimize, top-right of the card, and it collapses to one line along the bottom saying what is waiting. Nothing is answered or lost — anything you typed into the card is still there when you press Show it.",
-    "The app now knows the DBA's two SQL standards and ships them with itself. Any script that creates or alters a table or a column gets the --@diagram tag and the MS_Description blocks before you see it.",
-    "For stored procedures, the TRY...CATCH / usp_LogException framework is applied only on the release lines that carry it — the app tells you which line the script targets and asks you, rather than guessing. A 'no' is written into the pull request text so a reviewer does not read it as an oversight.",
-    "It no longer comments the code it changes. The explanation belongs in the RCA, not in the diff. Comments the build needs, and a comment your change made wrong, are still handled.",
-    "Includes 2.14.0, which fixed a 2.13.0 that could not get past its own start screen, and put your real plan usage (the /usage figure) in the strip."
+    "Fixed: \"the host is unreachable, schema only until the VPN is up\" while the VPN was up and SSMS was connected to the same server. The check asked DNS for IPv4 and IPv6 together, and behind the VPN's split DNS that question comes back empty for a host that has no IPv6 address — so a live server was reported as down, and any run started then lost its row data for its whole length. It now retries IPv4-only and then straight at the DNS servers before it believes it. Measured against the real server: unreachable 5 times out of 5 before, reachable 5 out of 5 after.",
+    "The same check is what decides \"Azure DevOps cannot be reached\", so that banner could be wrong for the same reason. It is fixed too.",
+    "Carries 2.15.0: Minimize on any gate card, the DBA's two SQL standards built in and shipped with the app, and no more comments written into the code it changes.",
+    "And 2.14.0: the 2.13.0 start-screen fix, and your real plan usage (the /usage figure) in the strip."
   ]
 }
