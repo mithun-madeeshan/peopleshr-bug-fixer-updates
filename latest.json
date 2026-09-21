@@ -1,15 +1,16 @@
 {
-  "version": "2.14.0",
+  "version": "2.15.0",
   "kind": "app",
   "released": "2026-09-21",
   "minVersion": "2.8.1",
-  "payload": "payloads/2.14.0.bin",
-  "sha256": "928b05e5d848d7d0650eb9234ede6087d35998eff4d23184e2dbcc3442f04d5e",
-  "size": 1514661,
+  "payload": "payloads/2.15.0.bin",
+  "sha256": "01048d49c9a1a1efea30c7953ef229a77349abaab271081395e219762aec2f69",
+  "size": 1539318,
   "notes": [
-    "Fixes 2.13.0, which could not get past its own start screen. If the app has been sitting on the four green ticks with no way in, this is the fix — not your machine.",
-    "The usage strip now shows your REAL plan usage: the same percentage the CLI gives you for /usage, plus when each window resets. That is the number that says whether a run you start now will finish.",
-    "The token counts beside it still come from your own machine and still include your terminal sessions. Hover either figure for the breakdown and where the reading came from.",
-    "If you sign in with an API key rather than a subscription, or you are offline, the strip falls back to the old comparison and says why."
+    "A card that asks you something can now be rolled out of the way: press Minimize, top-right of the card, and it collapses to one line along the bottom saying what is waiting. Nothing is answered or lost — anything you typed into the card is still there when you press Show it.",
+    "The app now knows the DBA's two SQL standards and ships them with itself. Any script that creates or alters a table or a column gets the --@diagram tag and the MS_Description blocks before you see it.",
+    "For stored procedures, the TRY...CATCH / usp_LogException framework is applied only on the release lines that carry it — the app tells you which line the script targets and asks you, rather than guessing. A 'no' is written into the pull request text so a reviewer does not read it as an oversight.",
+    "It no longer comments the code it changes. The explanation belongs in the RCA, not in the diff. Comments the build needs, and a comment your change made wrong, are still handled.",
+    "Includes 2.14.0, which fixed a 2.13.0 that could not get past its own start screen, and put your real plan usage (the /usage figure) in the strip."
   ]
 }
