@@ -1,16 +1,15 @@
 {
-  "version": "2.11.0",
+  "version": "2.14.0",
   "kind": "app",
-  "released": "2026-09-17",
+  "released": "2026-09-21",
   "minVersion": "2.8.1",
-  "payload": "payloads/2.11.0.bin",
-  "sha256": "bc596cc3ff0ceb6e1a104a991f304a2aba16fc19dc0152238731a9ba20856f79",
-  "size": 1448576,
+  "payload": "payloads/2.14.0.bin",
+  "sha256": "928b05e5d848d7d0650eb9234ede6087d35998eff4d23184e2dbcc3442f04d5e",
+  "size": 1514661,
   "notes": [
-    "Fixed: your saved database connections and your Azure DevOps token are no longer lost when you replace the app by hand. They were stored INSIDE the app folder — the one you delete and re-extract — so anyone following \"extract into a fresh folder and delete the old one\" lost them silently. They now live in %LOCALAPPDATA%PeoplesHR Bug Fixer, which no update can touch. Your existing settings are moved there automatically the first time you open this version; nothing is deleted.",
-    "New theme: Yukther — Light, in Visual Studio's classic light palette. Settings → Speed & model → Theme.",
-    "Fixed: dropdown values were invisible in the light theme — the open list was painted near-black while the text was near-black too. Every theme now paints its own list, and a test checks the contrast of all of them.",
-    "Fixed: the app filed faults against itself that were not faults — clicking Update when you were already up to date, and reporting a long-dead update failure from a version you had moved past. It also counted one finished fix several times.",
-    "From 2.10.0, if you missed it: a Plan / Auto switch on the run header. Auto is the default and lets the agent write from the start; the plan gate still waits for you."
+    "Fixes 2.13.0, which could not get past its own start screen. If the app has been sitting on the four green ticks with no way in, this is the fix — not your machine.",
+    "The usage strip now shows your REAL plan usage: the same percentage the CLI gives you for /usage, plus when each window resets. That is the number that says whether a run you start now will finish.",
+    "The token counts beside it still come from your own machine and still include your terminal sessions. Hover either figure for the breakdown and where the reading came from.",
+    "If you sign in with an API key rather than a subscription, or you are offline, the strip falls back to the old comparison and says why."
   ]
 }
