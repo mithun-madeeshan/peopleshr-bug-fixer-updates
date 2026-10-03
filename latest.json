@@ -1,15 +1,13 @@
 {
-  "version": "2.23.0",
+  "version": "2.23.1",
   "kind": "app",
   "released": "2026-10-03",
   "minVersion": "2.8.1",
-  "payload": "payloads/2.23.0.bin",
-  "sha256": "75d218819d602a7b39f6940e012fb25e6999badc408b7926d2d9962bb4506f21",
-  "size": 1585036,
+  "payload": "payloads/2.23.1.bin",
+  "sha256": "140441d2fa4ce5886cbbbcf575b6f56bb914bf07d4b106687104cfbbf66b4f5e",
+  "size": 1585343,
   "notes": [
-    "A Learnings tab: browse and search everything the team has taught the app about the PeoplesHR code, filter by module, add one by hand.",
-    "Correct a learning (the old wording stays on the shelf with who changed it) or retire one that is wrong, with a reason; retired learnings stop reaching runs.",
-    "One shelf for both apps: the Bug Fixer and the PHR Feature Developer now share PeoplesHR-Learnings, and your existing learnings move across on their own.",
-    "If someone changed a learning while you were reading it, you are shown their version instead of overwriting it."
+    "Learnings tab: the module dropdowns and the search and form boxes now follow your theme.",
+    "Pick a module from the list, or choose \"New module…\" to type one."
   ]
 }
