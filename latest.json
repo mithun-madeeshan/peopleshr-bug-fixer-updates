@@ -1,29 +1,15 @@
 {
-  "version": "2.22.0",
+  "version": "2.23.0",
   "kind": "app",
-  "released": "2026-10-02",
+  "released": "2026-10-03",
   "minVersion": "2.8.1",
-  "payload": "payloads/2.22.0.bin",
-  "sha256": "1007d7a4159b2b4061b90281db05c00b11edd8280b769ffc0ac9c953067da31b",
-  "size": 1577897,
+  "payload": "payloads/2.23.0.bin",
+  "sha256": "75d218819d602a7b39f6940e012fb25e6999badc408b7926d2d9962bb4506f21",
+  "size": 1585036,
   "notes": [
-    "Explain simply now re-explains the last answer in plain words with the context you are missing.",
-    "Safer and steadier: a run no longer freezes on \"Thinking\" when Claude cannot start, Stop and Pause now also stop the database and browser helpers it started, and confirm dialogs no longer treat Enter as Yes.",
-    "Gate cards are readable in the light themes, and \"Skip this stage\" and \"Make this a fix\" work again.",
-    "Browser and database tools are allowed from the start. You no longer allow them one at a time, and the browser no longer restarts and logs you out after each one.",
-    "The agent reads database rows itself, from any table, using the connection you picked for the run. It no longer asks you for credentials or for permission to read.",
-    "Testing on the sandbox no longer needs your permission each time: the agent may read data and set up test records through the product UI, and lists everything it created in testdata.md so you can clean it up.",
-    "Runs for a second repository (for example Job Portal) now start correctly and get the same browser, database and read-only settings as the main run. A reopened run keeps its browser testing.",
-    "A run for a second repository no longer moves the bug to Dev In Progress or asks for an RCA. The main run owns both.",
-    "Typing \"skip rca\" now really skips it, and the run can finish without it.",
-    "The app no longer auto-continues a run it has just sent a message to, and the agent no longer stops to wait on a background task.",
-    "A password you type in the chat is masked in the saved transcript.",
-    "When you ask a question mid-run, the agent answers that exact question instead of chasing a different issue.",
-    "Builds of .NET Framework projects use Visual Studio MSBuild, so the false missing-reference errors are gone.",
-    "The \"Allow tool and continue\" banner appears only when allowing the tool can help. Strict read-only no longer blocks searching code for SQL text.",
-    "Plans list the decisions they need from you at the top, each with a recommendation.",
-    "Completed Work is proposed from active time, so a run left overnight no longer suggests 32 hours.",
-    "If the agent sends a question in the wrong format, the app still shows it instead of carrying on without your answer.",
-    "At the PR step, the app lists modified files that are not part of the PR, such as a local Web.config tweak."
+    "A Learnings tab: browse and search everything the team has taught the app about the PeoplesHR code, filter by module, add one by hand.",
+    "Correct a learning (the old wording stays on the shelf with who changed it) or retire one that is wrong, with a reason; retired learnings stop reaching runs.",
+    "One shelf for both apps: the Bug Fixer and the PHR Feature Developer now share PeoplesHR-Learnings, and your existing learnings move across on their own.",
+    "If someone changed a learning while you were reading it, you are shown their version instead of overwriting it."
   ]
 }
