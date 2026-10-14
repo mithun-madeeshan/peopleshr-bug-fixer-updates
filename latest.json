@@ -1,13 +1,17 @@
 {
-  "version": "2.23.1",
+  "version": "2.24.0",
   "kind": "app",
-  "released": "2026-10-03",
+  "released": "2026-10-14",
   "minVersion": "2.8.1",
-  "payload": "payloads/2.23.1.bin",
-  "sha256": "140441d2fa4ce5886cbbbcf575b6f56bb914bf07d4b106687104cfbbf66b4f5e",
-  "size": 1585343,
+  "payload": "payloads/2.24.0.bin",
+  "sha256": "f1db3b477e6824e43f7e4ce5959a54fb64d8ed737eff051bcfd0feda381d6700",
+  "size": 1601017,
   "notes": [
-    "Learnings tab: the module dropdowns and the search and form boxes now follow your theme.",
-    "Pick a module from the list, or choose \"New module…\" to type one."
+    "Dev testing works again: the browser now starts on Node 20 directly, and the app checks it at run start. If it cannot start, the run shows the real error.",
+    "New run buttons: Reconnect browser, and a Read-only DB switch. Both restart the run in the same session, so nothing already found is lost.",
+    "Strict read-only no longer blocks ordinary code edits, such as the <mssql> query files.",
+    "New Product knowledge toggle: runs search the WeKnora PeoplesHR docs (PRDs, behaviour briefs, findings) while analysing.",
+    "Fixed: replies to a reopened run showed twice; \"moved from X to X\" state notes are gone.",
+    "Also includes 2.23.2: settings files saved with a BOM no longer turn Superpower off."
   ]
 }
